@@ -1,0 +1,31 @@
+3 copy problem jo vector use krti h
+1 recursion scr to dest problem pair
+time complexity recursive function
+error problem
+// #include<iostream>
+// #include<string>
+// #include<algorithm>
+// using namespace std;
+
+// int main()
+// {
+//     return 0;
+// }
+
+
+Error/output
+
+level 1
+sumof2primenos
+addtwofractions
+decodingOfDigitSequence
+quardaticEquation
+convertNumberToText
+
+Binary->Famous
+twoUnique
+subsetsOfSets
+oneUniqueInSetOf3
+
+String->Basic
+countingBits->Vector ko print krna
