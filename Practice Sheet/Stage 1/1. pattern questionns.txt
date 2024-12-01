@@ -1,0 +1,25 @@
+HARD
+1.Right arrow Star pattern
+2.Left Arrow Star pattern
+3.Half Diamond pattern
+4.Full Diamond pattern
+5.Plus Star Pattern
+6.X-Star pattern
+
+EASY
+6.Mirrored Rhombus Star
+7.Hollow Mirrored Rhombus Star
+8.Hollow Mirrored Right Triangle star
+9.Hollow Inverted Mirrored Right Triangle star		
+10.Inverted Mirrored Right Triangle star
+11.Hollow Square Star with Diagonal
+
+MEDIUM
+12.Square Star
+13.Hollow Square Star
+14.Rhombus Star pattern
+15.hollow Rhombus
+16.Right Triangle star
+17.hollow Right Triangle star
+18.Inverted Right Triangle star
+19.Mirrored Right Triangle star
