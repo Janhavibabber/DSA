@@ -14,7 +14,8 @@ using namespace std;
 // }
 
 int searchElement(int arr[], int n, int x){
-    int s=0, e=n-1;
+    int s=0;
+    int e=n-1;
     int ans = -1;
 
     while(s<=e){
