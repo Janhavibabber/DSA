@@ -9,7 +9,7 @@ string solve(string &s, int idx, int n){
     }
     string curr = "";
     curr += s[idx];
-    return ((s[idx] == 'a')?"":curr + solve(s, idx+1, n));
+    return ((s[idx] == 'a')? "" : curr) + solve(s, idx+1, n);
 
 }
 
@@ -20,9 +20,9 @@ int main()
 
     int n=s.length();
 
-    solve(s, 0, n);
+    cout<< solve(s, 0, n);
 
-    cout<<s<<endl;
+    // cout<<s<<endl;
     
     return 0;
 }

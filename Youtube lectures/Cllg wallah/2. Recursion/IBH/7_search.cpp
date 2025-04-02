@@ -4,7 +4,8 @@ using namespace std;
 bool solve(int arr[], int n, int x, int i){
     if(i==n)
         return false;
-    return (arr[i]==x) || solve(arr, n, x, i+1);
+    // return (arr[i]==x) || solve(arr, n, x, i+1);
+    return (arr[i] == x)? true: solve(arr, n, x, i + 1);
 }
 
 int main()
@@ -18,7 +19,7 @@ int main()
         cin>>arr[i];
     }
     
-    if(solve(arr, n, x, 0))
+    if(solve(arr, 1, 2, 0))
         cout<<"YES"<<endl;
     else
         cout<<"NO"<<endl;

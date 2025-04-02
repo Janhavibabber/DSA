@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/acer/Desktop/Regular/DSA/DSA/Youtube lectures/CodeHelp/6. Recursion/IBH",
+      "program": "c:/Users/acer/Desktop/Regular/DSA/DSA/Youtube lectures/CodeHelp/6. Recursion/IBH/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
