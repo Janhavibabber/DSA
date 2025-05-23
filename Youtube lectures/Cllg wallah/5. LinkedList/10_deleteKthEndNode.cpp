@@ -52,33 +52,50 @@ public:
     }
 };
 
-void deleteByVal(Node *&head, int val)
-{
-    Node *curr = head;
-    while (curr != NULL && curr->next != NULL)
-    {
-        if (curr->next->val == val)
-        {
-            Node *temp = curr->next;
-            curr->next = curr->next->next;
-            free(temp);
-        }
-        curr = curr->next;
+void removekthNode(Node* &head, int k){
+    Node* ptr1=head;
+    Node* ptr2=head;
+
+    // set ptr2 by k steps ahead
+    int count=k;
+    while(count--){
+        ptr2 = ptr2->next;
     }
+    // if k is equal to length of linked list that is we have to delete head node
+    if(ptr2 == NULL){
+        Node* temp = head;
+        head=head->next;
+        free(temp);
+        return;
+    }
+
+    // when ptr2 is at NULL(end of the list), ptr1 will be at node to be deleted(kth node) as ptr2 is k steps ahead of ptr1
+    while(ptr2->next!=NULL){
+        ptr1=ptr1->next;
+        ptr2=ptr2->next;
+    } 
+
+    // now ptr1 is pointing to the (k+1)th node from end
+    Node* temp = ptr1->next;
+    ptr1->next=ptr1->next->next;
+    free(temp);
+
 }
+
+
 
 int main()
 {
     LinkedList ll;
     ll.inserAtTail(1);
     ll.inserAtTail(2);
-    ll.inserAtTail(8);
+    ll.inserAtTail(3);
     ll.inserAtTail(4);
     ll.inserAtTail(5);
+    ll.inserAtTail(6);
     ll.display();
 
-    deleteByVal(ll.head, 8);
-    cout << "After deleting nodes with val: "<<endl;
+    removekthNode(ll.head, 3);
     ll.display();
 
     return 0;
