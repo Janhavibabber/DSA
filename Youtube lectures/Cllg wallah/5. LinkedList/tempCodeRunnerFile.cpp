@@ -1,2 +1,7 @@
-ll2.inserAtTail(2);
-    // ll2.inserAtTail(3);
+while(head!=tail && tail!=head->prev){
+    //     if(head->val!=tail->val){
+    //         return false;
+    //     }
+    //     head=head->next;
+    //     tail=tail->next;
+    // }

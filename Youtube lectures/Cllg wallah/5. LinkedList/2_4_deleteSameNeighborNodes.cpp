@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 class Node
@@ -58,36 +58,38 @@ public:
     }
 };
 
-void reverseDLL(Node* &head, Node* &tail){
-    Node* curr=head;
-
-    while(curr != NULL){
-        Node* nextptr = curr->next;
-        curr->next = curr->prev;
-        curr->prev = nextptr;
-        curr = nextptr;
+void deleteSameNeighbourNode(Node* &head, Node* &tail){
+    if(head == NULL || head->next == NULL){
+        return;
     }
-
-    // swap head and tail
-    Node* newHead = tail;
-    tail = head;
-    head = newHead;
+    // second last node
+    Node* curr = tail->prev;
+    while(curr!=head){
+        Node* prevptr = curr->prev;
+        Node* nextptr = curr->next;
+        if(prevptr->val == nextptr->val){
+            prevptr->next = nextptr;
+            nextptr->prev = prevptr;
+            free(curr);
+        }
+        curr=prevptr;
+    }
 }
 
 int main()
 {
     DoublyLL dll;
-    dll.insertAtTail(1);
+    
+    dll.insertAtTail(2);    
+    dll.insertAtTail(1);    
+    dll.insertAtTail(1);    
     dll.insertAtTail(2);
-    dll.insertAtTail(3);
-    dll.insertAtTail(4);
-    dll.insertAtTail(5);
-    // cout << "Original Doubly Linked List (Head to Tail): " << endl;
+    dll.insertAtTail(1);
     dll.displayHeadToTail();
 
-    reverseDLL(dll.head, dll.tail);
-    // cout << "Reversed Doubly Linked List (Head to Tail): " << endl;
+    deleteSameNeighbourNode(dll.head, dll.tail);
     dll.displayHeadToTail();
+
 
     return 0;
 }

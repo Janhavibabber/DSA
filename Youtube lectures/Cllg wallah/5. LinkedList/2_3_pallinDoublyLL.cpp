@@ -33,7 +33,7 @@ public:
         Node *temp = head;
         while (temp != NULL)
         {
-            cout << temp->val << " ";
+            cout << temp->val << "<->";
             temp = temp->next;
         }
         cout << "NULL" << endl;
@@ -58,21 +58,21 @@ public:
     }
 };
 
-void reverseDLL(Node* &head, Node* &tail){
-    Node* curr=head;
-
-    while(curr != NULL){
-        Node* nextptr = curr->next;
-        curr->next = curr->prev;
-        curr->prev = nextptr;
-        curr = nextptr;
+bool isPallin(Node* head, Node* tail){
+    if(head == NULL || head->next == NULL){
+        return true;
     }
-
-    // swap head and tail
-    Node* newHead = tail;
-    tail = head;
-    head = newHead;
+    while(head!=tail && tail!=head->prev){
+        if(head->val!=tail->val){
+            return false;
+        }
+        head=head->next;
+        tail=tail->prev;
+    }
+    return true;
 }
+
+
 
 int main()
 {
@@ -80,14 +80,14 @@ int main()
     dll.insertAtTail(1);
     dll.insertAtTail(2);
     dll.insertAtTail(3);
-    dll.insertAtTail(4);
-    dll.insertAtTail(5);
+    dll.insertAtTail(2);
+    dll.insertAtTail(1);
     // cout << "Original Doubly Linked List (Head to Tail): " << endl;
     dll.displayHeadToTail();
 
-    reverseDLL(dll.head, dll.tail);
-    // cout << "Reversed Doubly Linked List (Head to Tail): " << endl;
-    dll.displayHeadToTail();
+    cout<<isPallin(dll.head, dll.tail);
+    
+    // cout << "Is the Doubly Linked List a palindrome? " << (isPallin(dll.head, dll.tail) ? "Yes" : "No") << endl;
 
     return 0;
 }
