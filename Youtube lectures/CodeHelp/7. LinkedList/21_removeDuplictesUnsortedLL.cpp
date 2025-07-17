@@ -64,6 +64,7 @@ void deleteDuplicates(Node* &head){
         if(visited[curr] == true){
             prev->next = curr->next;
             free(curr);
+            return;
         }
         visited[curr] = true;
         prev = curr;
