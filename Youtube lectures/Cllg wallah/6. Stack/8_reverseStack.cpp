@@ -30,7 +30,7 @@ using namespace std;
 }*/
 
 // App2: Recursive = take temp or call stack then insert at bottom to original stack. TC->O(n^2); SC->O(n)
-void insertAtBottom(stack<int> &s, int x)
+/*void insertAtBottom(stack<int> &s, int x)
 {
     stack<int> temp; // temporary stack
 
@@ -64,16 +64,29 @@ void recReverseStack(stack<int> &s)
 
     recReverseStack(s);
     insertAtBottom(s, curr);
+}*/
+
+void reverse(stack<int> &s)
+{
+    if (s.empty())
+    {
+        return;
+    }
+
+    cout << s.top() << " ";
+    s.pop();
+    reverse(s);
 }
 
 int main()
 {
     stack<int> s;
-    s.push(1);
-    s.push(2);
     s.push(3);
-    s.push(4);
-    recReverseStack(s);
+    s.push(2);
+    s.push(1);
+    s.push(7);
+    s.push(6);
+    reverse(s);
     while (!s.empty())
     {
         cout << s.top() << " ";
