@@ -1,0 +1,3 @@
+cd "Youtube lectures/Cllg wallah/7. Queue"
+g++ hello.cpp -o hello_program
+./hello_program
